@@ -2,12 +2,15 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 
 export default function WeatherItem({data}) {
+  const {city, list} = data;
+  const name = city.name;
+  const {temp, pressure, humidity} = list[0].main;
   return (
-  <tr key={data.id}>
-    <td>{data.city}</td>
-    <td>{data.temp}</td>
-    <td>{data.pressure}</td>
-    <td>{data.humidity}</td>
+  <tr>
+    <td>{name}</td>
+    <td>{temp}</td>
+    <td>{pressure}</td>
+    <td>{humidity}</td>
   </tr>
   )
 }

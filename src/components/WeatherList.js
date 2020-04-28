@@ -1,41 +1,23 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import WeatherItem from './WeatherItem';
+import { useSelector } from 'react-redux'
 
 
-export default function SearchBar() {
-  const data = [
-    {
-    id:1,
-    city: 'Seoul', temp: 10.24,
-    pressure: 1012,
-    humidity: 73,
-  },
-    {
-    id:2,
-    city: 'Tokyo', temp: 10.24,
-    pressure: 1012,
-    humidity: 73,
-  },
-    {
-    id:3,
-    city: 'N.Y', temp: 10.24,
-    pressure: 1012,
-    humidity: 73,
-  },
-  ]
+export default function WeatherList() {
+  const cities = useSelector(state => state.cities); 
   return (
     <Table  bordered hover variant="dark">
       <thead>
         <tr>
           <th>City</th>
           <th>Temperature</th>
-          <th>Humidity</th>
           <th>pressure</th>
+          <th>Humidity</th>
         </tr>
       </thead>
       <tbody>
-        { data.map(item => (<WeatherItem data={item} />))}
+        { cities.map(item => (<WeatherItem key={item.city.id} data={item} />))}
       </tbody>
     </Table>
   )
