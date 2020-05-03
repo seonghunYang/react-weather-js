@@ -10,9 +10,9 @@ export default function WeatherList() {
     <Table  bordered hover variant="dark">
       <thead>
         <tr>
+          <th>Map</th>
           <th>City</th>
           <th>Temperature</th>
-          <th>pressure</th>
           <th>Humidity</th>
         </tr>
       </thead>
