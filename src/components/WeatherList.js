@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 export default function WeatherList() {
   const cities = useSelector(state => state.cities); 
   return (
-    <Table  bordered hover variant="dark">
+    <Table  bordered hover >
       <thead>
         <tr>
           <th>Map</th>
